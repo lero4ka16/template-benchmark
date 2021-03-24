@@ -2,7 +2,7 @@
 set title 'Java Template Engine Performance Comparison'
 set ylabel 'Templates rendered per second'
 set xlabel 'Template Engine'
-set xtics nomirror rotate by -90
+set xtics nomirror rotate by -45
 
 # Ranges
 set autoscale
