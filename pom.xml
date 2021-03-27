@@ -35,7 +35,7 @@
 		<beetl.version>2.5.3</beetl.version>
 		<jetg.version>1.0.0</jetg.version>
 		<jte.version>1.9.0</jte.version>
-		<te4j.version>1.1.0-SNAPSHOT</te4j.version>
+		<te4j.version>1.1.1</te4j.version>
 	</properties>
 
 	<licenses>

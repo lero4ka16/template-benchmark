@@ -8,6 +8,7 @@ target/
 .project
 .idea/
 .idea_modules/
+/.jte-classes/
 *.iml
 /target/
 /BenchmarkList
