@@ -7,6 +7,7 @@ import java.io.Writer;
 import java.net.URL;
 import java.util.Map;
 
+
 import org.beetl.core.Configuration;
 import org.beetl.core.GroupTemplate;
 import org.beetl.core.Template;
@@ -24,6 +25,7 @@ public class Beetl extends BaseBenchmark {
 	public void setup() throws IOException {
 		ClasspathResourceLoader resourceLoader = new MyClasspathResourceLoader("/");
 		Configuration cfg = Configuration.defaultConfiguration();
+		cfg.setCacheOutPutBuffer(10240);
 		cfg.setStatementStart("@");
 		cfg.setStatementEnd(null);
 		cfg.getResourceMap().put("autoCheck", "false");
@@ -35,10 +37,7 @@ public class Beetl extends BaseBenchmark {
 	public String benchmark() throws IOException {
 		Template template = gt.getTemplate("/templates/stocks.beetl.html");
 		template.binding(getContext());
-		Writer writer = new StringWriter();
-		template.renderTo(writer);
-
-		return writer.toString();
+		return template.render();
 	}
 
 	static class MyClasspathResourceLoader extends ClasspathResourceLoader {
